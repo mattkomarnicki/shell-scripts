@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Script to create new packed and compressed tar.bz2 archive.
+# Script to extract tar.bz2 archive into given destination.
 #
 # Copyright (c) 2015 Matthew Komarnicki
 # All rights reserved.
@@ -17,11 +17,9 @@ function danger {
 
 if [ $# -ne 2 ]; then
 	danger "Invalid usage, try:"
-	echo "$0 {destination_file} {source_dir}"
+	echo "$0 {source_file} {destination_dir}"
 	exit
 fi
 
-ts=`date '+%F_%T' | sed -e 's/:/_/g'`
-
-tar -cjf $1_${ts}.tar.bz2 $2
-echo -e "\nPacked and compressed! Done!"
+mkdir -p $2 && tar zxf $1 -C $2
+echo -e "\nExtracted! Done!"
