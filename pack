@@ -1,0 +1,22 @@
+#!/bin/bash
+function danger {
+	if [ $# = 1 ]
+	then
+		tput setaf 1
+		tput bold
+		echo $1
+		tput sgr 0
+	fi
+}
+
+if [ $# -ne 2 ]
+then
+	danger "Invalid usage, try:"
+	echo "$0 {destination_file} {source_dir}"
+	exit
+fi
+
+ts=`date '+%F_%T' | sed -e 's/:/_/g'`
+
+tar -zcvf $1_${ts}.tar.gz $2
+echo -e "\nPacked! Done!"
