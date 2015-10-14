@@ -1,0 +1,45 @@
+#!/bin/bash
+#
+# Installation script to create symbolic links for all shell scripts inside /usr/local/bin directory,
+# so that user can access them globally from anywhere.
+#
+# Copyright (c) 2015 Matthew Komarnicki
+# All rights reserved.
+# http://komarnicki.pl
+
+function danger {
+	if [ $# = 1 ]; then
+		tput setaf 1
+		tput bold
+		echo $1
+		tput sgr 0
+	fi
+}
+
+scripts=(
+    "pack"
+    "unpack"
+)
+
+c=0
+src=`pwd`
+dest="/usr/local/bin"
+
+for script in "${scripts[@]}"
+do
+    if [ ! -f "$src/$script" ]; then
+
+        danger "Installing $script - unable to create a symlink for the $script script. File does not exist in $src."
+
+    else
+
+        cmd_str="sudo ln -sf $src/$script $dest/$script"
+        eval $cmd_str
+
+        (( c++ ))
+
+        echo "Installing $script - done"
+    fi
+done
+
+echo "Done! $c scripts installed into $dest."
