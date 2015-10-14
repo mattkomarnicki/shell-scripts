@@ -1,6 +1,7 @@
 ## Shell Scripts (Helpers)
 
-The pourpose of this repository is to collect frequently used Unix commands and wrap them into shell scripts, so that the end user doesn't have to memorize additional arguments to run them. 
+The purpose of this repository is to collect frequently used Unix commands and wrap them into shell scripts, 
+so that the end user doesn't have to memorize any additional arguments before running them. 
 
 Scripts should:
 * have clear name (ideally one world)
