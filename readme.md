@@ -1,4 +1,4 @@
-## Shell Scripts (Helpers)
+# Shell Scripts (Helpers)
 
 The purpose of this repository is to collect frequently used Unix commands and wrap them into shell scripts, 
 so that the end user doesn't have to memorize any additional arguments before running them. 
@@ -14,9 +14,9 @@ Is extremely easy. My idea was to be able to trigger all scripts globally from e
 To achieve that, for each script a new symlink will be created in `/usr/local/bin` automatically.
 
 All you have to do is to:
-1. be sure that **install** script is executable (`chmod +x install`)
-2. you have root access since all symlinks are created with `sudo`
-3. simply call `./install`
+* be sure that **install** script is executable (`chmod +x install`)
+* you have root access since all symlinks are created with `sudo`
+* simply call `./install`
 
 ## Example usage
 
@@ -31,7 +31,12 @@ Go to the destination location
 Call the script, first argument is the name you want to call your archive, seconds is obviously the location of your images
 `pack my_compressed_images my_images/`
 
-After a while you should get new archive `my_compressed_images_2015-10-14_21_20_06.tar.bz2`. Current timestamp will be
-automatically added. You don't have to add the `tar.bz2` extension.
+After a while you should get new archive `my_compressed_images_2015-10-14_21_20_06.tar.bz2`. 
+
+**Current timestamp will be automatically added.** You don't have to add the `tar.bz2` extension.
 
 Call `pack` with no arguments to see simple hint.
+
+## Example preview
+
+![Example preview](https://raw.githubusercontent.com/komarnicki/shell-scripts/master/example.png)
