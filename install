@@ -21,25 +21,28 @@ scripts=(
     "unpack"
 )
 
-c=0
+c=${#scripts[@]}
+s=0
+f=0
+
 src=`pwd`
 dest="/usr/local/bin"
 
 for script in "${scripts[@]}"
 do
-    if [ ! -f "$src/$script" ]; then
+    cmd_str="sudo ln -sf $src/$script $dest/$script"
+    eval $cmd_str
 
-        danger "Installing $script - unable to create a symlink for the $script script. File does not exist in $src."
-
-    else
-
-        cmd_str="sudo ln -sf $src/$script $dest/$script"
-        eval $cmd_str
-
-        (( c++ ))
-
+    if [ $? -eq 0 ]; then
+        (( s++ ))
         echo "Installing $script - done"
+    else
+        (( f++ ))
+        danger "Installing $script - unable to create a symlink for the $script script. File does not exist in $src."
     fi
 done
 
-echo "Done! $c scripts installed into $dest."
+echo -e "\n$s Installed"
+if [ "$f" -gt 0 ]; then
+    danger "$f Failed"
+fi
