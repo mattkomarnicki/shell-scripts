@@ -26,7 +26,7 @@ read EMAIL
 
 if [ "_" = "_$EMAIL" ];
 then
-	echo "Nothing given!"
+    echo "Nothing given!"
     exit 1
 elif [[ $EMAIL != *@* ]];
 then
