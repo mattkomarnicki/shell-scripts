@@ -71,6 +71,21 @@ case $input in
         ;;
 esac
 
+# Dev stack
+read -r -p "Would you like to install essential packages for developer? [Y/n] " input
+case $input in
+    [yY][eE][sS]|[yY])
+        sh $SCRIPTS_DIR/install-dev-stack.sh
+        result=$?
+        if [ $result -eq 1 ]; then
+            echo "${RED}Dev stack has not been installed${RESET}"
+        fi
+        ;;
+    *)
+        echo "${YEL}Skipping${RESET}"
+        ;;
+esac
+
 echo "${GRE}+----------------------------------------------------------------+"
 echo "${GRE}| Congratulations! Seems that all done!                          |"
 echo "${GRE}+----------------------------------------------------------------+"
