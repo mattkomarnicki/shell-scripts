@@ -38,7 +38,7 @@ sudo hdiutil detach /Volumes/Vagrant
 open /tmp/Oracle_VM_VirtualBox_Extension_Pack-5.0.10-104061.vbox-extpack
 
 echo "Installing PHP 7"
-brew install homebrew/php/php70
+brew install homebrew/php/php70 --with-postgresql
 echo 'export PATH=$(brew --prefix homebrew/php/php70)/bin:$PATH' >> ~/.zshrc
 
 echo "Installing NodeJS"
