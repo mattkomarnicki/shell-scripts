@@ -20,10 +20,10 @@ case $input in
         if [ $result -eq 1 ]; then
             echo "${RED}Host name has not been changed${RESET}"
         fi
-		;;
+        ;;
     *)
-    	echo "${YEL}Skipping${RESET}"
-	    ;;
+        echo "${YEL}Skipping${RESET}"
+        ;;
 esac
 
 # Generate SSH keys
@@ -35,10 +35,10 @@ case $input in
         if [ $result -eq 1 ]; then
             echo "${RED}SSH keys have not been generated${RESET}"
         fi
-		;;
+        ;;
     *)
-    	echo "${YEL}Skipping${RESET}"
-	    ;;
+        echo "${YEL}Skipping${RESET}"
+        ;;
 esac
 
 # Command Line Tools and Homebrew
@@ -50,10 +50,10 @@ case $input in
         if [ $result -eq 1 ]; then
             echo "${RED}Homebrew has not been installed${RESET}"
         fi
-		;;
+        ;;
     *)
-    	echo "${YEL}Skipping${RESET}"
-	    ;;
+        echo "${YEL}Skipping${RESET}"
+        ;;
 esac
 
 # Oh My Zsh
@@ -65,10 +65,10 @@ case $input in
         if [ $result -eq 1 ]; then
             echo "${RED}Oh My Zsh has not been installed${RESET}"
         fi
-		;;
+        ;;
     *)
-    	echo "${YEL}Skipping${RESET}"
-	    ;;
+        echo "${YEL}Skipping${RESET}"
+        ;;
 esac
 
 echo "${GRE}+----------------------------------------------------------------+"
