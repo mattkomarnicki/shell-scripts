@@ -52,6 +52,11 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true # don't c
 
 echo "Adjusting System itself."
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1 # check for updates daily
+sudo nvram SystemAudioVolume=%80 # disable startup sound (works in macOS Sierra 10.12.1)
+                                 # other possible options are:
+                                 # - sudo nvram SystemAudioVolume=%01
+                                 # - sudo nvram SystemAudioVolume=%00
+                                 # - sudo nvram SystemAudioVolume=" "
 
 echo "Adjusting Trackpad."
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true # enable "Tap To Click" feature
