@@ -1,15 +1,8 @@
 #!/bin/bash
 
-# Ask for the administrator password
-sudo -v
+sudo -v # ask for the administrator password
 
-DIR_CODE=$HOME/Code
 DIR_SCREENSHOTS=$HOME/Screenshots
-DIR_REPOSITORIES=$HOME/Repositories
-
-echo "Creating custom directories in the home directory ($HOME)."
-mkdir -p $DIR_CODE
-mkdir -p $DIR_REPOSITORIES
 
 echo "Adjusting Dock."
 defaults write com.apple.Dock autohide-delay -float 0
