@@ -13,6 +13,7 @@ defaults write com.apple.finder AppleShowAllFiles -bool true # always display hi
 defaults write com.apple.finder ShowStatusBar -bool true # show Finder status bar
 defaults write com.apple.finder ShowPathbar -bool true # show Finder path bar
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false # no warning prompt when changing file extension
+/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user # remove duplicates from right click "Open With…" menu
 killall Finder
 
 echo "Adjusting Keyboard."
