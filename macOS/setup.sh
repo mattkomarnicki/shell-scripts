@@ -104,7 +104,7 @@ alias vssh='cd $HOME/Homestead && vagrant ssh'
 alias code='cd $HOME/Code'
 alias ls='ls -Glah'
 alias dumpa='php artisan dump:autoload'
-alias yt='youtube-dl'
+alias yt='youtube-dl -f best -i -o "%(upload_date)s_%(title)s.%(ext)s"'
 alias yta='youtube-dl --extract-audio --audio-format mp3'
 
 EOF
