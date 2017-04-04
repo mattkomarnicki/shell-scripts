@@ -106,6 +106,8 @@ alias ls='ls -Glah'
 alias dumpa='php artisan dump:autoload'
 alias yt='youtube-dl -f best -i -o "%(upload_date)s_%(title)s.%(ext)s"'
 alias yta='youtube-dl --extract-audio --audio-format mp3'
+alias backup_pictures='rsync -avzP /Volumes/SLICK-2TB/Pictures_WITH_MASTER_CATALOG /Volumes/SLICK-PICTURES-BACKUP --delete'
+alias backup_music='rsync -avzP ~/Music/iTunes /Volumes/SLICK-2TB/Music --delete'
 
 EOF
 
